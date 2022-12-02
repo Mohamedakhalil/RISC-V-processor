@@ -1,0 +1,30 @@
+addi x1,x0,1
+addi x2,x0,5
+add x5,x2,x0
+addi x3,x0,4
+add x4, x0, x1
+L1: beq x4,x3, out
+add x2,x2,x5
+add x4, x4, x1
+beq x0,x0,L1
+out: sw x2, 120(x0)
+xori x8,x1,3
+xor x8,x8,x8
+auipc x9,12345
+sh x9,124(x0)
+lb x6,124(x0)
+lui x10,1
+sb x10, 126(x0)
+sll x10,x10,x1
+srl x10,x10,x1
+sll x10,x10,x1
+sra x10,x10,x1
+jal x14,l2
+srl x10,x10,x1
+srl x10,x10,x1
+sll x10,x10,x1
+l2:addi x15,x0,-5
+slt x16,x15,x0
+sltu x17,x15,x0
+slti x18,x0,3
+ebreak
